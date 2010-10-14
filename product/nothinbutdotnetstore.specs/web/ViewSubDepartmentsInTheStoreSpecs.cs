@@ -9,7 +9,7 @@ using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.specs.web
 {
-    public class ViewSubMainDepartmentsInTheStoreSpecs
+    public class ViewSubDeparmentsInTheStoreSpecs
     {
         public abstract class concern : Observes<ApplicationCommand, ViewSubDepartmentsInTheStore>
         {
