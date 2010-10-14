@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
+using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.web.application;
 using nothinbutdotnetstore.web.application.model;
 using nothinbutdotnetstore.web.infrastructure.frontcontroller;
-using nothinbutdotnetstore.web.tasks;
 using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.specs.web
@@ -20,12 +20,12 @@ namespace nothinbutdotnetstore.specs.web
         {
             Establish c = () =>
             {
-                department_repository = the_dependency<DepartmentRepository>();
+                catalog_tasks = the_dependency<CatalogTasks>();
                 department_list = new List<DepartmentItem> {};
                 request = an<Request>();
                 response_engine = the_dependency<ResponseEngine>();
 
-                department_repository.Stub(x => x.get_the_main_departments()).Return(department_list);
+                catalog_tasks.Stub(x => x.get_the_main_departments()).Return(department_list);
             };
 
             Because b = () =>
@@ -36,7 +36,7 @@ namespace nothinbutdotnetstore.specs.web
 
             protected static Request request;
             protected static IEnumerable<DepartmentItem> department_list;
-            protected static DepartmentRepository department_repository;
+            protected static CatalogTasks catalog_tasks;
             static ResponseEngine response_engine;
         }
     }

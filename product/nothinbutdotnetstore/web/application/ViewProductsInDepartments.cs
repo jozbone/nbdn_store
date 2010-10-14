@@ -4,13 +4,13 @@ using nothinbutdotnetstore.web.infrastructure.frontcontroller;
 
 namespace nothinbutdotnetstore.web.application
 {
-    public class ViewSubDepartmentsInTheStore : ApplicationCommand
+    public class ViewProductsInDepartments : ApplicationCommand
     {
         CatalogTasks catalog_tasks;
         ResponseEngine response_engine;
 
 
-        public ViewSubDepartmentsInTheStore(CatalogTasks catalog_tasks,
+        public ViewProductsInDepartments(CatalogTasks catalog_tasks,
                                             ResponseEngine response_engine)
         {
             this.catalog_tasks = catalog_tasks;
@@ -19,7 +19,7 @@ namespace nothinbutdotnetstore.web.application
 
         public void process(Request request)
         {
-            response_engine.display(catalog_tasks.get_the_sub_departments_in(request.map<DepartmentItem>()));
+            response_engine.display(catalog_tasks.get_the_products_in(request.map<DepartmentItem>()));
         }
     }
 }

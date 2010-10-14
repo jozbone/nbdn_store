@@ -45,12 +45,12 @@
   <ItemGroup>
     <Compile Include="web\application\model\DepartmentItem.cs" />
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
-    <Compile Include="web\application\ViewProductsInSubDepartments.cs" />
+    <Compile Include="web\application\ViewProductsInDepartments.cs" />
     <Compile Include="web\application\ViewSubDepartmentsInTheStore.cs" />
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubRequestFactory.cs" />
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubResponseEngine.cs" />
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubSetOfCommands.cs" />
-    <Compile Include="web\tasks\DepartmentRepository.cs" />
+    <Compile Include="tasks\CatalogTasks.cs" />
     <Compile Include="web\infrastructure\frontcontroller\ApplicationCommand .cs" />
     <Compile Include="web\infrastructure\frontcontroller\DefaultFrontController.cs" />
     <Compile Include="web\infrastructure\frontcontroller\DefaultRequestCommand.cs" />
@@ -64,7 +64,7 @@
     <Compile Include="web\infrastructure\frontcontroller\RequestHandler.cs" />
     <Compile Include="web\infrastructure\frontcontroller\RequestCommandSpecification.cs" />
     <Compile Include="web\infrastructure\frontcontroller\ResponseEngine.cs" />
-    <Compile Include="web\tasks\stubs\StubDepartmentRepository.cs" />
+    <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

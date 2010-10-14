@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using nothinbutdotnetstore.web.application.model;
 
-namespace nothinbutdotnetstore.web.tasks.stubs
+namespace nothinbutdotnetstore.tasks.stubs
 {
-    public class StubDepartmentRepository : DepartmentRepository
+    public class StubCatalogTasks : CatalogTasks
     {
         public IEnumerable<DepartmentItem> get_the_main_departments()
         {
@@ -18,7 +18,7 @@ namespace nothinbutdotnetstore.web.tasks.stubs
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ProductItem> get_the_products_in_a_sub_deparment(DepartmentItem parent_department)
+        public IEnumerable<ProductItem> get_the_products_in(DepartmentItem department)
         {
             throw new NotImplementedException();
         }

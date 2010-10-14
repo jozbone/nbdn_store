@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
+using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.web.application;
 using nothinbutdotnetstore.web.application.model;
 using nothinbutdotnetstore.web.infrastructure.frontcontroller;
-using nothinbutdotnetstore.web.tasks;
 using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.specs.web
@@ -20,13 +20,13 @@ namespace nothinbutdotnetstore.specs.web
         {
             Establish c = () =>
             {
-                department_repository = the_dependency<DepartmentRepository>();
+                catalog_tasks = the_dependency<CatalogTasks>();
                 all_the_sub_departments_in_a_department = new List<DepartmentItem> {};
                 parent_department = new DepartmentItem();
                 request = an<Request>();
                 response_engine = the_dependency<ResponseEngine>();
 
-                department_repository.Stub(x => x.get_the_sub_departments_in(parent_department)).Return(
+                catalog_tasks.Stub(x => x.get_the_sub_departments_in(parent_department)).Return(
                     all_the_sub_departments_in_a_department);
 
                 request.Stub(x => x.map<DepartmentItem>()).Return(parent_department);
@@ -43,7 +43,7 @@ namespace nothinbutdotnetstore.specs.web
             protected static IEnumerable<DepartmentItem> all_the_sub_departments_in_a_department;
             static ResponseEngine response_engine;
             static DepartmentItem parent_department;
-            static DepartmentRepository department_repository;
+            static CatalogTasks catalog_tasks;
         }
     }
 }

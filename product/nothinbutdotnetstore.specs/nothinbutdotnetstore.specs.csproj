@@ -69,7 +69,7 @@
     <Compile Include="web\RequestCommandSpecs.cs" />
     <Compile Include="web\RequestHandlerSpecs.cs" />
     <Compile Include="web\ViewMainDepartmentsInTheStoreSpecs.cs" />
-    <Compile Include="web\ViewProductsInSubDepartmentsSpecs.cs" />
+    <Compile Include="web\ViewProductsInADepartmentSpecs.cs" />
     <Compile Include="web\ViewSubDepartmentsInTheStoreSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
