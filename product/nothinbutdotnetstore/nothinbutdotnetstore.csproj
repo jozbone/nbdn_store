@@ -49,10 +49,12 @@
     <Compile Include="web\application\ViewSubDepartmentsInTheStore.cs" />
     <Compile Include="web\infrastructure\frontcontroller\BasicResponseEngine.cs" />
     <Compile Include="web\infrastructure\frontcontroller\ContextResolver.cs" />
+    <Compile Include="web\infrastructure\frontcontroller\DefaultRequest.cs" />
     <Compile Include="web\infrastructure\frontcontroller\DefaultViewFor.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="web\infrastructure\frontcontroller\PageFactory.cs" />
+    <Compile Include="web\infrastructure\frontcontroller\Payload.cs" />
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubRequestFactory.cs" />
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubSetOfCommands.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
