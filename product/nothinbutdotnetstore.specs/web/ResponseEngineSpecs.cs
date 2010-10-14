@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Web;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
@@ -36,6 +37,7 @@ namespace nothinbutdotnetstore.specs.web
                     the_requested_details = new PageCreationDetails {path = x, type = y};
                     return view;
                 });
+
                 provide_a_basic_sut_constructor_argument<ContextResolver>(() => the_context);
             };
 

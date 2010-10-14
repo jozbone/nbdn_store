@@ -48,6 +48,7 @@
     <Compile Include="web\application\ViewProductsInDepartments.cs" />
     <Compile Include="web\application\ViewSubDepartmentsInTheStore.cs" />
     <Compile Include="web\infrastructure\frontcontroller\BasicResponseEngine.cs" />
+    <Compile Include="web\infrastructure\frontcontroller\ContextResolver.cs" />
     <Compile Include="web\infrastructure\frontcontroller\DefaultViewFor.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

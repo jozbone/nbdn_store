@@ -1,6 +1,6 @@
 <%@ MasterType VirtualPath="Store.master" %>
 <%@ Page Language="c#" AutoEventWireup="true" 
-Inherits="System.Web.UI.Page" MasterPageFile="Store.master" %>
+Inherits="nothinbutdotnetstore.web.ui.views.ProductBrowser" CodeFile="ProductBrowser.aspx.cs" MasterPageFile="Store.master" %>
 
 
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
