@@ -16,7 +16,7 @@ namespace nothinbutdotnetstore.specs.web
         }
 
         [Subject(typeof(ViewSubDepartmentsInTheStore))]
-        public class when_displaying_the_set_of_sub_departments_in_the_store : concern
+        public class when_displaying_all_of_the_subdepartments_in_a_department : concern
         {
             Establish c = () =>
             {
