@@ -31,6 +31,7 @@ namespace nothinbutdotnetstore.specs.web
 
                 request.Stub(x => x.map<DepartmentItem>()).Return(parent_department);
 
+
             };
 
             Because b = () =>
