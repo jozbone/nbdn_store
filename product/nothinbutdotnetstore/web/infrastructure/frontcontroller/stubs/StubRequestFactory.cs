@@ -1,5 +1,6 @@
 using System;
 using System.Web;
+using nothinbutdotnetstore.web.application.model;
 
 namespace nothinbutdotnetstore.web.infrastructure.frontcontroller.stubs
 {
@@ -14,7 +15,8 @@ namespace nothinbutdotnetstore.web.infrastructure.frontcontroller.stubs
         {
             public InputModel map<InputModel>()
             {
-                throw new NotImplementedException();
+                object department = new DepartmentItem {name = "Parent Department"};
+                return (InputModel) department;
             }
         }
     }

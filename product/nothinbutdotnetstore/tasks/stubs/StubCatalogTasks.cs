@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using nothinbutdotnetstore.web.application.model;
 
 namespace nothinbutdotnetstore.tasks.stubs
@@ -15,12 +15,16 @@ namespace nothinbutdotnetstore.tasks.stubs
 
         public IEnumerable<DepartmentItem> get_the_sub_departments_in(DepartmentItem parent_department)
         {
-            throw new NotImplementedException();
+            return
+                Enumerable.Range(1, 100).Select(
+                    x => new DepartmentItem {name = x.ToString("Subdepartment of the department 0")});
         }
 
         public IEnumerable<ProductItem> get_the_products_in(DepartmentItem department)
         {
-            throw new NotImplementedException();
+            return
+                Enumerable.Range(1, 100).Select(
+                    x => new ProductItem {});
         }
     }
 }
