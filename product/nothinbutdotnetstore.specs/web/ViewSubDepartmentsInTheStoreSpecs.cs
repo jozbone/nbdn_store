@@ -20,24 +20,30 @@ namespace nothinbutdotnetstore.specs.web
         {
             Establish c = () =>
             {
-                sub_department_repository = the_dependency<SubDepartmentRepository>();
-                sub_department_list = new List<SubDepartmentItem> { };
+                department_repository = the_dependency<DepartmentRepository>();
+                all_the_sub_departments_in_a_department = new List<DepartmentItem> {};
+                parent_department = new DepartmentItem();
                 request = an<Request>();
                 response_engine = the_dependency<ResponseEngine>();
 
-                sub_department_repository.Stub(x => x.get_the_sub_departments()).Return(sub_department_list);
+                department_repository.Stub(x => x.get_the_sub_departments_in(parent_department)).Return(
+                    all_the_sub_departments_in_a_department);
+
+                request.Stub(x => x.map<DepartmentItem>()).Return(parent_department);
+
             };
 
             Because b = () =>
                 sut.process(request);
 
             It should_tell_the_response_engine_to_display_the_list_of_departments =
-                () => { response_engine.received(x => x.display(sub_department_list)); };
+                () => { response_engine.received(x => x.display(all_the_sub_departments_in_a_department)); };
 
             protected static Request request;
-            protected static IEnumerable<SubDepartmentItem> sub_department_list;
-            protected static SubDepartmentRepository sub_department_repository;
+            protected static IEnumerable<DepartmentItem> all_the_sub_departments_in_a_department;
             static ResponseEngine response_engine;
+            static DepartmentItem parent_department;
+            static DepartmentRepository department_repository;
         }
     }
 }

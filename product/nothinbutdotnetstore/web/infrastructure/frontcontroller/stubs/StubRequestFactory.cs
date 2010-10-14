@@ -1,3 +1,4 @@
+using System;
 using System.Web;
 
 namespace nothinbutdotnetstore.web.infrastructure.frontcontroller.stubs
@@ -11,6 +12,10 @@ namespace nothinbutdotnetstore.web.infrastructure.frontcontroller.stubs
 
         class StubRequest : Request
         {
+            public InputModel map<InputModel>()
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
