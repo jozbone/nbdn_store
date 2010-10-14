@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.infrastructure.frontcontroller;
-using nothinbutdotnetstore.web.infrastructure.frontcontroller.stubs;
 
 namespace nothinbutdotnetstore.web.application
 {
@@ -11,7 +9,7 @@ namespace nothinbutdotnetstore.web.application
         CatalogTasks catalog_tasks;
         ResponseEngine response_engine;
 
-        public ViewMainDepartmentsInTheStore() : this(new StubCatalogTasks(), new StubResponseEngine())
+        public ViewMainDepartmentsInTheStore() : this(new StubCatalogTasks(), new BasicResponseEngine())
         {
         }
 
@@ -26,5 +24,4 @@ namespace nothinbutdotnetstore.web.application
             response_engine.display(catalog_tasks.get_the_main_departments());
         }
     }
-
 }
