@@ -8,7 +8,10 @@ namespace nothinbutdotnetstore.web.tasks.stubs
     {
         public IEnumerable<DepartmentItem> get_the_main_departments()
         {
-            return Enumerable.Range(1, 1000).Select(x => new DepartmentItem {name = x.ToString("Department 0")});
+            yield return new DepartmentItem {name = "Bakery"};
+            yield return new DepartmentItem {name = "Produce"};
+            yield return new DepartmentItem {name = "Dairy"};
+
         }
     }
 }
