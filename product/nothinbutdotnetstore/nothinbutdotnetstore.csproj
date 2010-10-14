@@ -47,8 +47,12 @@
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
     <Compile Include="web\application\ViewProductsInDepartments.cs" />
     <Compile Include="web\application\ViewSubDepartmentsInTheStore.cs" />
+    <Compile Include="web\infrastructure\frontcontroller\BasicResponseEngine.cs" />
+    <Compile Include="web\infrastructure\frontcontroller\DefaultViewFor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\infrastructure\frontcontroller\PageFactory.cs" />
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubRequestFactory.cs" />
-    <Compile Include="web\infrastructure\frontcontroller\stubs\StubResponseEngine.cs" />
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubSetOfCommands.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
     <Compile Include="web\infrastructure\frontcontroller\ApplicationCommand .cs" />
@@ -65,6 +69,9 @@
     <Compile Include="web\infrastructure\frontcontroller\RequestCommandSpecification.cs" />
     <Compile Include="web\infrastructure\frontcontroller\ResponseEngine.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
+    <Compile Include="web\infrastructure\frontcontroller\stubs\StubViewPathRegistry.cs" />
+    <Compile Include="web\infrastructure\frontcontroller\View.cs" />
+    <Compile Include="web\infrastructure\frontcontroller\ViewPathRegistry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
