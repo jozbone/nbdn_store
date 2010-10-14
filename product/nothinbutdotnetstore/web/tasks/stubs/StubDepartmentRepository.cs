@@ -17,5 +17,10 @@ namespace nothinbutdotnetstore.web.tasks.stubs
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<ProductItem> get_the_products_in_a_sub_deparment(DepartmentItem parent_department)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

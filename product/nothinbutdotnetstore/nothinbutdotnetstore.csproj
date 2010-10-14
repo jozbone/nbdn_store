@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="web\application\model\DepartmentItem.cs" />
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
+    <Compile Include="web\application\ViewProductsInSubDepartments.cs" />
     <Compile Include="web\application\ViewSubDepartmentsInTheStore.cs" />
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubRequestFactory.cs" />
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubResponseEngine.cs" />

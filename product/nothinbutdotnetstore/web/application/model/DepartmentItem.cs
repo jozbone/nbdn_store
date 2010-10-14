@@ -4,4 +4,8 @@ namespace nothinbutdotnetstore.web.application.model
     {
         public string name { get; set; }
     }
+
+    public class ProductItem
+    {
+    }
 }

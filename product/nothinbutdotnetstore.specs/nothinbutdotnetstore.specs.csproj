@@ -58,6 +58,7 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="examples\Calculator.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="web\RequestCommandSpecs.cs" />
     <Compile Include="web\RequestHandlerSpecs.cs" />
     <Compile Include="web\ViewMainDepartmentsInTheStoreSpecs.cs" />
+    <Compile Include="web\ViewProductsInSubDepartmentsSpecs.cs" />
     <Compile Include="web\ViewSubDepartmentsInTheStoreSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
