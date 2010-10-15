@@ -11,7 +11,7 @@ namespace nothinbutdotnetstore.specs.infrastructure
         }
 
         [Subject(typeof(Container))]
-        public class when_requesting_container_servcies : concern
+        public class when_requesting_container_services : concern
         {
             Establish c = () =>
             {
@@ -23,7 +23,7 @@ namespace nothinbutdotnetstore.specs.infrastructure
             Because b = () =>
                 result = Container.resolve;
 
-            It should_return_the_gateway_to_the_actual_container = () =>
+            It should_return_the_facade_to_the_actual_container = () =>
                 result.ShouldEqual(the_underlying_container);
 
             static DependencyContainer result;

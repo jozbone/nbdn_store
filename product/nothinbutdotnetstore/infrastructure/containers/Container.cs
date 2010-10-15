@@ -9,7 +9,7 @@ namespace nothinbutdotnetstore.infrastructure.containers
 
         public static DependencyContainer resolve
         {
-            get { throw new NotImplementedException(); }
+            get { return container_resolver(); }
         }
     }
 }

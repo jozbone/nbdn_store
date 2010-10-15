@@ -1,5 +1,5 @@
 using System.Web;
-using nothinbutdotnetstore.web.infrastructure.frontcontroller.stubs;
+using nothinbutdotnetstore.infrastructure.containers;
 
 namespace nothinbutdotnetstore.web.infrastructure.frontcontroller
 {
@@ -8,11 +8,14 @@ namespace nothinbutdotnetstore.web.infrastructure.frontcontroller
         RequestFactory request_factory;
         FrontController front_controller;
 
-
         public RequestHandler(RequestFactory request_factory, FrontController front_controller)
         {
             this.request_factory = request_factory;
             this.front_controller = front_controller;
+        }
+
+        public RequestHandler():this(Container.resolve.an<RequestFactory>(),Container.resolve.an<FrontController>())
+        {
         }
 
         public void ProcessRequest(HttpContext context)
