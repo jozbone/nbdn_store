@@ -19,7 +19,7 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
             }
             catch(Exception ex)
             {
-                var dce = new DependencyCreationException(string.Empty, ex);
+                var dce = new DependencyCreationException("Could not create the requested Dependancy", ex);
                 dce.type_that_could_not_be_created = typeof(Dependency);
                 throw dce;
             }
