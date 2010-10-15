@@ -1,15 +1,15 @@
 using System;
-using System.Runtime.Serialization;
 
 namespace nothinbutdotnetstore.infrastructure.containers.basic
 {
-    public class DependencyCreationException :Exception
+    public class DependencyCreationException : Exception
     {
+        public Type type_that_could_not_be_created { get; private set; }
 
-        public DependencyCreationException(string message, Exception innerException) : base(message, innerException)
+        public DependencyCreationException(Exception inner_exception, Type type_that_could_not_be_created)
+            : base(string.Empty, inner_exception)
         {
+            this.type_that_could_not_be_created = type_that_could_not_be_created;
         }
-
-        public Type type_that_could_not_be_created { get; set; }
     }
 }
