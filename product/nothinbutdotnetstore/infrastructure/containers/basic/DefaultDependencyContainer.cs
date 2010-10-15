@@ -1,26 +1,17 @@
-using System;
-using System.Collections.Generic;
-
 namespace nothinbutdotnetstore.infrastructure.containers.basic
 {
     public class DefaultDependencyContainer : DependencyContainer
     {
-        IDictionary<DependencyType, DependencyFactory> dependency_dictionary;
+        DependencyFactoryRegistry dependency_factory_registry;
 
-        public DefaultDependencyContainer(IDictionary<DependencyType, DependencyFactory> dependency_dictionary  )
+        public DefaultDependencyContainer(DependencyFactoryRegistry dependency_factory_registry)
         {
-            this.dependency_dictionary = dependency_dictionary;
+            this.dependency_factory_registry = dependency_factory_registry;
         }
 
         public Dependency an<Dependency>()
         {
-            foreach(DependencyType dt in dependency_dictionary.Keys)
-            {
-                if (dt.represents(typeof(Dependency)))
-                    return (Dependency)dependency_dictionary[dt].create();
-            }
-          
-            throw new ArgumentException("could not find dependancy");
+            return (Dependency) dependency_factory_registry.get_dependency_factory_for(typeof(Dependency)).create();
         }
     }
 }
