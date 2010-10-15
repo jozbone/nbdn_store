@@ -64,6 +64,7 @@
     <Compile Include="examples\Calculator.cs" />
     <Compile Include="examples\CalculatorSpecs.cs" />
     <Compile Include="infrastructure\ContainerSpecs.cs" />
+    <Compile Include="infrastructure\DependencyContainerSpecs.cs" />
     <Compile Include="utilities\ObjectMother.cs" />
     <Compile Include="web\FrontControllerSpecs.cs" />
     <Compile Include="web\CommandRegistrySpecs.cs" />
