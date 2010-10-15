@@ -1,5 +1,4 @@
 ﻿using nothinbutdotnetstore.tasks;
-using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.application.model;
 using nothinbutdotnetstore.web.infrastructure.frontcontroller;
 
@@ -16,10 +15,6 @@ namespace nothinbutdotnetstore.web.application
         {
             this.catalog_tasks = catalog_tasks;
             this.response_engine = response_engine;
-        }
-
-        public ViewSubDepartmentsInTheStore():this(new StubCatalogTasks(),new BasicResponseEngine())
-        {
         }
 
         public void process(Request request)

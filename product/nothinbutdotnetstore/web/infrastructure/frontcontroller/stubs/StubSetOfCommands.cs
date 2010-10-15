@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using nothinbutdotnetstore.web.application;
 
 namespace nothinbutdotnetstore.web.infrastructure.frontcontroller.stubs
 {
@@ -13,9 +13,10 @@ namespace nothinbutdotnetstore.web.infrastructure.frontcontroller.stubs
 
         public IEnumerator<RequestCommand> GetEnumerator()
         {
-            yield return new DefaultRequestCommand(request => true, new ViewMainDepartmentsInTheStore());
-            yield return new DefaultRequestCommand(request => true, new ViewSubDepartmentsInTheStore());
-            yield return new DefaultRequestCommand(request => true, new ViewProductsInDepartments());
+            throw new NotImplementedException();
+            //            yield return new DefaultRequestCommand(request => true, new ViewMainDepartmentsInTheStore());
+            //            yield return new DefaultRequestCommand(request => true, new ViewSubDepartmentsInTheStore());
+            //            yield return new DefaultRequestCommand(request => true, new ViewProductsInDepartments());
         }
     }
 }
