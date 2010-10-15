@@ -13,7 +13,13 @@ namespace nothinbutdotnetstore.specs.infrastructure
          public abstract class concern : Observes<DependencyFactoryRegistry,
                                              DefaultDependencyFactoryRegistry>
          {
-        
+             Establish c = () =>
+             {
+                 dependency_factories = new Dictionary<Type, DependencyFactory>();
+                 provide_a_basic_sut_constructor_argument(dependency_factories);
+             };
+
+             protected static IDictionary<Type, DependencyFactory> dependency_factories;
          }
 
          [Subject(typeof(DefaultDependencyFactoryRegistry))]
@@ -22,12 +28,7 @@ namespace nothinbutdotnetstore.specs.infrastructure
              Establish c = () =>
              {
                  the_factory = an<DependencyFactory>();
-
-                 dependency_factories = new Dictionary<Type,DependencyFactory>();
-
                  dependency_factories.Add(typeof(IDbConnection),the_factory);
-
-                 provide_a_basic_sut_constructor_argument(dependency_factories);
              };
 
              Because b = () =>
@@ -40,32 +41,19 @@ namespace nothinbutdotnetstore.specs.infrastructure
 
              static DependencyFactory result;
              static DependencyFactory the_factory;
-             static IDictionary<Type, DependencyFactory> dependency_factories;
          }
 
          [Subject(typeof(DefaultDependencyFactoryRegistry))]
          public class when_requesting_a_dependency_factory_for_an_unmapped_specific_type : concern
          {
-             Establish c = () =>
-             {
-                 the_factory = an<DependencyFactory>();
-                 dependency_factories = new Dictionary<Type, DependencyFactory>();
-                 provide_a_basic_sut_constructor_argument(dependency_factories);
-             };
-
              Because b = () =>
                  catch_exception(() => sut.get_dependency_factory_for(typeof(IDbConnection)));
 
              It should_throw_a_dependency_creation_exception_with_the_appropriate_information = () =>
              {
-                 var exception = exception_thrown_by_the_sut.ShouldBeAn<DependencyCreationException>();
-                 exception.type_that_could_not_be_created.ShouldEqual(typeof(IDbConnection));
-                 exception.InnerException.ShouldEqual(null);
+                 exception_thrown_by_the_sut.ShouldBeAn<DependencyFactoryNotRegisteredException>().type_that_has_no_factory.ShouldEqual(typeof(IDbConnection));
              };
 
-             static DependencyFactory result;
-             static DependencyFactory the_factory;
-             static IDictionary<Type, DependencyFactory> dependency_factories;
          }
      }
  }

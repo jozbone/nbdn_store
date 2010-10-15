@@ -71,6 +71,7 @@
     <Compile Include="infrastructure\MapperRegistrySpecs.cs" />
     <Compile Include="infrastructure\TextWriterLoggerFactorySpecs.cs" />
     <Compile Include="infrastructure\TextWriterLoggerSpecs.cs" />
+    <Compile Include="tasks\StartupSpecs.cs" />
     <Compile Include="utilities\CommonPipelineBehaviours.cs" />
     <Compile Include="utilities\ObjectMother.cs" />
     <Compile Include="web\FrontControllerSpecs.cs" />
