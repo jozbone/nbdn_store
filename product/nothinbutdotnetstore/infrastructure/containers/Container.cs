@@ -4,8 +4,7 @@ namespace nothinbutdotnetstore.infrastructure.containers
 {
     public class Container
     {
-        public static ContainerResolver container_resolver =
-            () => { throw new NotImplementedException("This needs to be configured by the startup pipeline"); };
+        public static ContainerResolver container_resolver;
 
         public static DependencyContainer resolve
         {
