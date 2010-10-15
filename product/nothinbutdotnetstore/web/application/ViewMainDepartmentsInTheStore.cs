@@ -1,5 +1,4 @@
 using nothinbutdotnetstore.tasks;
-using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.infrastructure.frontcontroller;
 
 namespace nothinbutdotnetstore.web.application
@@ -8,10 +7,6 @@ namespace nothinbutdotnetstore.web.application
     {
         CatalogTasks catalog_tasks;
         ResponseEngine response_engine;
-
-        public ViewMainDepartmentsInTheStore() : this(new StubCatalogTasks(), new BasicResponseEngine())
-        {
-        }
 
         public ViewMainDepartmentsInTheStore(CatalogTasks catalog_tasks, ResponseEngine response_engine)
         {

@@ -1,4 +1,3 @@
- 
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.infrastructure.containers;
@@ -9,7 +8,6 @@ namespace nothinbutdotnetstore.specs.infrastructure
     {
         public abstract class concern : Observes
         {
-
         }
 
         [Subject(typeof(Container))]
@@ -27,7 +25,6 @@ namespace nothinbutdotnetstore.specs.infrastructure
 
             It should_return_the_gateway_to_the_actual_container = () =>
                 result.ShouldEqual(the_underlying_container);
-
 
             static DependencyContainer result;
             static DependencyContainer the_underlying_container;

@@ -4,10 +4,6 @@ namespace nothinbutdotnetstore.web.infrastructure.frontcontroller
     {
         CommandRegistry registry;
 
-        public DefaultFrontController():this(new DefaultCommandRegistry())
-        {
-        }
-
         public DefaultFrontController(CommandRegistry registry)
         {
             this.registry = registry;
