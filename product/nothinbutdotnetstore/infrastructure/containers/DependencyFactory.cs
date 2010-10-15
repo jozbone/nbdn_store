@@ -1,5 +1,7 @@
 namespace nothinbutdotnetstore.infrastructure.containers
 {
-    public delegate object DependencyFactory();
-
+    public interface DependencyFactory
+    {
+        object create();
+    }
 }

@@ -21,34 +21,27 @@ namespace nothinbutdotnetstore.specs.infrastructure
         {
             Establish c = () =>
             {
-                the_connection = new SqlConnection();
-                dependency_type = an<DependencyType>();
                 dependencies = new Dictionary<DependencyType, DependencyFactory>();
+                provide_a_basic_sut_constructor_argument(dependencies);
+                dependency_type = an<DependencyType>();
+                var dependency_factory = an<DependencyFactory>();
+
+                the_connection = new SqlConnection();
+                dependencies.Add(dependency_type, dependency_factory);
 
                 dependency_type.Stub(x => x.represents(typeof(IDbConnection))).Return(true);
-                dependencies.Add(dependency_type, () => the_connection);
-
-                provide_a_basic_sut_constructor_argument(dependencies);
+                dependency_factory.Stub(x => x.create()).Return(the_connection);
             };
 
             Because b = () =>
                 result = sut.an<IDbConnection>();
 
             It should_return_the_dependency_created_by_the_factory = () =>
-                result.ShouldEqual(the_connection)
-
-        :
+                result.ShouldEqual(the_connection);
 
             static IDbConnection result;
             static IDbConnection the_connection;
             static IDictionary<DependencyType, DependencyFactory> dependencies;
-            static DependencyType dependency_type;
-        }
-
-
-            static IDbConnection result;
-            static IDbConnection the_connection;
-            static Dictionary<DependencyType, DependencyFactory> dependencies;
             static DependencyType dependency_type;
         }
     }
