@@ -67,9 +67,14 @@
     <Compile Include="infrastructure\ContainerSpecs.cs" />
     <Compile Include="infrastructure\DependencyContainerSpecs.cs" />
     <Compile Include="infrastructure\LogSpecs.cs" />
+    <Compile Include="infrastructure\MapperRegistrySpecs.cs" />
+    <Compile Include="infrastructure\TextWriterLoggerFactorySpecs.cs" />
+    <Compile Include="infrastructure\TextWriterLoggerSpecs.cs" />
+    <Compile Include="utilities\CommonPipelineBehaviours.cs" />
     <Compile Include="utilities\ObjectMother.cs" />
     <Compile Include="web\FrontControllerSpecs.cs" />
     <Compile Include="web\CommandRegistrySpecs.cs" />
+    <Compile Include="web\InputModelMapperSpecs.cs" />
     <Compile Include="web\RequestCommandSpecs.cs" />
     <Compile Include="web\RequestHandlerSpecs.cs" />
     <Compile Include="web\RequestSpecs.cs" />

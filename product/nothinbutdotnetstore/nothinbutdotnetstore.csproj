@@ -51,19 +51,26 @@
     <Compile Include="infrastructure\containers\DependencyContainer .cs" />
     <Compile Include="infrastructure\containers\DependencyFactory.cs" />
     <Compile Include="infrastructure\containers\DependencyFactoryRegistry.cs" />
+    <Compile Include="infrastructure\DefaultMapperRegistry.cs" />
+    <Compile Include="infrastructure\logging\basic\TextWriterLogger.cs" />
+    <Compile Include="infrastructure\logging\basic\TextWriterLoggerFactory.cs" />
     <Compile Include="infrastructure\logging\Log.cs" />
     <Compile Include="infrastructure\logging\Logger.cs" />
     <Compile Include="infrastructure\logging\LoggerFactory.cs" />
+    <Compile Include="infrastructure\Mapper.cs" />
+    <Compile Include="infrastructure\MapperRegistry.cs" />
     <Compile Include="web\application\model\DepartmentItem.cs" />
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
     <Compile Include="web\application\ViewProductsInDepartments.cs" />
     <Compile Include="web\application\ViewSubDepartmentsInTheStore.cs" />
     <Compile Include="web\infrastructure\frontcontroller\BasicResponseEngine.cs" />
     <Compile Include="web\infrastructure\frontcontroller\ContextResolver.cs" />
+    <Compile Include="web\infrastructure\frontcontroller\DefaultInputModelMapper.cs" />
     <Compile Include="web\infrastructure\frontcontroller\DefaultRequest.cs" />
     <Compile Include="web\infrastructure\frontcontroller\DefaultViewFor.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="web\infrastructure\frontcontroller\InputModelMapper.cs" />
     <Compile Include="web\infrastructure\frontcontroller\PageFactory.cs" />
     <Compile Include="web\infrastructure\frontcontroller\Payload.cs" />
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubRequestFactory.cs" />
@@ -86,6 +93,9 @@
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubViewPathRegistry.cs" />
     <Compile Include="web\infrastructure\frontcontroller\View.cs" />
     <Compile Include="web\infrastructure\frontcontroller\ViewPathRegistry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="infrastructure\logging\log4net\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
