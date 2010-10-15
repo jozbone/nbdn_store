@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using nothinbutdotnetstore.infrastructure.containers.basic;
 
 namespace nothinbutdotnetstore.infrastructure.containers
 {
@@ -14,7 +15,12 @@ namespace nothinbutdotnetstore.infrastructure.containers
 
         public DependencyFactory get_dependency_factory_for(Type dependency_type)
         {
-            return factories[dependency_type];
+            if(factories.ContainsKey(dependency_type))
+            {
+                return factories[dependency_type];
+            }
+
+            throw new DependencyCreationException(null, dependency_type);
         }
     }
 }
