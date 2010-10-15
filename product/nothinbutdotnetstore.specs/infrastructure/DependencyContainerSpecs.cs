@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using Machine.Specifications;
@@ -14,6 +14,9 @@ namespace nothinbutdotnetstore.specs.infrastructure
         public abstract class concern : Observes<DependencyContainer,
                                             DefaultDependencyContainer>
         {
+            Establish c = () => { dependencies = the_dependency<DependencyFactoryRegistry>(); };
+
+            protected static DependencyFactoryRegistry dependencies;
         }
 
         [Subject(typeof(DefaultDependencyContainer))]
@@ -21,15 +24,11 @@ namespace nothinbutdotnetstore.specs.infrastructure
         {
             Establish c = () =>
             {
-                dependencies = new Dictionary<DependencyType, DependencyFactory>();
-                provide_a_basic_sut_constructor_argument(dependencies);
-                dependency_type = an<DependencyType>();
                 var dependency_factory = an<DependencyFactory>();
 
                 the_connection = new SqlConnection();
-                dependencies.Add(dependency_type, dependency_factory);
 
-                dependency_type.Stub(x => x.represents(typeof(IDbConnection))).Return(true);
+                dependencies.Stub(x => x.get_dependency_factory_for(typeof(IDbConnection))).Return(dependency_factory);
                 dependency_factory.Stub(x => x.create()).Return(the_connection);
             };
 
@@ -41,8 +40,32 @@ namespace nothinbutdotnetstore.specs.infrastructure
 
             static IDbConnection result;
             static IDbConnection the_connection;
-            static IDictionary<DependencyType, DependencyFactory> dependencies;
-            static DependencyType dependency_type;
+        }
+
+        [Subject(typeof(DefaultDependencyContainer))]
+        public class when_attempting_to_get_a_dependency_and_the_factory_for_that_dependency_throws_an_exception :
+            concern
+        {
+            Establish c = () =>
+            {
+                var dependency_factory = an<DependencyFactory>();
+                inner_exception = new Exception();
+
+                dependencies.Stub(x => x.get_dependency_factory_for(typeof(IDbConnection))).Return(dependency_factory);
+                dependency_factory.Stub(x => x.create()).Throw(inner_exception);
+            };
+
+            Because b = () =>
+                catch_exception(() => sut.an<IDbConnection>());
+
+            It should_throw_a_dependency_creation_exception_with_the_appropriate_information = () =>
+            {
+                var exception = exception_thrown_by_the_sut.ShouldBeAn<DependencyCreationException>();
+                exception.type_that_could_not_be_created.ShouldEqual(typeof(IDbConnection));
+                exception.InnerException.ShouldEqual(inner_exception);
+            };
+
+            static Exception inner_exception;
         }
     }
 }

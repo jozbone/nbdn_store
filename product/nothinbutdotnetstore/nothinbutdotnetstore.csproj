@@ -44,11 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="infrastructure\containers\basic\DefaultDependencyContainer.cs" />
-    <Compile Include="infrastructure\containers\basic\DependencyType.cs" />
+    <Compile Include="infrastructure\containers\basic\DependencyCreationException.cs" />
     <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\ContainerResolver.cs" />
     <Compile Include="infrastructure\containers\DependencyContainer .cs" />
     <Compile Include="infrastructure\containers\DependencyFactory.cs" />
+    <Compile Include="infrastructure\containers\DependencyFactoryRegistry.cs" />
     <Compile Include="web\application\model\DepartmentItem.cs" />
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
     <Compile Include="web\application\ViewProductsInDepartments.cs" />
