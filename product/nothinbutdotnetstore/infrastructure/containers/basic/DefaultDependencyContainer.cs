@@ -1,3 +1,5 @@
+using System;
+
 namespace nothinbutdotnetstore.infrastructure.containers.basic
 {
     public class DefaultDependencyContainer : DependencyContainer
@@ -11,7 +13,16 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
 
         public Dependency an<Dependency>()
         {
-            return (Dependency) dependency_factory_registry.get_dependency_factory_for(typeof(Dependency)).create();
+            try
+            {
+                return (Dependency) dependency_factory_registry.get_dependency_factory_for(typeof(Dependency)).create();
+            }
+            catch(Exception ex)
+            {
+                var dce = new DependencyCreationException(string.Empty, ex);
+                dce.type_that_could_not_be_created = typeof(Dependency);
+                throw dce;
+            }
         }
     }
 }
