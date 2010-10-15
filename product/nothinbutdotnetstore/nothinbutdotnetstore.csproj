@@ -43,6 +43,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infrastructure\containers\BasicDependencyFactory.cs" />
     <Compile Include="infrastructure\containers\basic\DefaultDependencyContainer.cs" />
     <Compile Include="infrastructure\containers\basic\DependencyCreationException.cs" />
     <Compile Include="infrastructure\containers\Container.cs" />
@@ -50,6 +51,9 @@
     <Compile Include="infrastructure\containers\DependencyContainer .cs" />
     <Compile Include="infrastructure\containers\DependencyFactory.cs" />
     <Compile Include="infrastructure\containers\DependencyFactoryRegistry.cs" />
+    <Compile Include="infrastructure\logging\Log.cs" />
+    <Compile Include="infrastructure\logging\Logger.cs" />
+    <Compile Include="infrastructure\logging\LoggerFactory.cs" />
     <Compile Include="web\application\model\DepartmentItem.cs" />
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
     <Compile Include="web\application\ViewProductsInDepartments.cs" />
