@@ -48,6 +48,7 @@
     <Compile Include="infrastructure\containers\basic\DependencyCreationException.cs" />
     <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\ContainerResolver.cs" />
+    <Compile Include="infrastructure\containers\DefaultDependencyFactoryRegistry.cs" />
     <Compile Include="infrastructure\containers\DependencyContainer .cs" />
     <Compile Include="infrastructure\containers\DependencyFactory.cs" />
     <Compile Include="infrastructure\containers\DependencyFactoryRegistry.cs" />
