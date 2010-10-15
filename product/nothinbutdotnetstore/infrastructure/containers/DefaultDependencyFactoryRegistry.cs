@@ -15,12 +15,13 @@ namespace nothinbutdotnetstore.infrastructure.containers
 
         public DependencyFactory get_dependency_factory_for(Type dependency_type)
         {
-            if(factories.ContainsKey(dependency_type))
-            {
-                return factories[dependency_type];
-            }
+            ensure_there_is_a_factory_registered_for(dependency_type);
+            return factories[dependency_type];
+        }
 
-            throw new DependencyCreationException(null, dependency_type);
+        void ensure_there_is_a_factory_registered_for(Type dependency_type)
+        {
+            if (! factories.ContainsKey(dependency_type)) throw  new DependencyFactoryNotRegisteredException(dependency_type);
         }
     }
 }

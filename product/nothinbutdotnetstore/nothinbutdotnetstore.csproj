@@ -46,6 +46,7 @@
     <Compile Include="infrastructure\containers\BasicDependencyFactory.cs" />
     <Compile Include="infrastructure\containers\basic\DefaultDependencyContainer.cs" />
     <Compile Include="infrastructure\containers\basic\DependencyCreationException.cs" />
+    <Compile Include="infrastructure\containers\basic\DependencyFactoryNotRegisteredException.cs" />
     <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\ContainerResolver.cs" />
     <Compile Include="infrastructure\containers\DefaultDependencyFactoryRegistry.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="infrastructure\logging\LoggerFactory.cs" />
     <Compile Include="infrastructure\Mapper.cs" />
     <Compile Include="infrastructure\MapperRegistry.cs" />
+    <Compile Include="tasks\startup\Startup.cs" />
     <Compile Include="web\application\model\DepartmentItem.cs" />
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />
     <Compile Include="web\application\ViewProductsInDepartments.cs" />
