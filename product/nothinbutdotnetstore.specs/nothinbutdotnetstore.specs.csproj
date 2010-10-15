@@ -65,6 +65,7 @@
     <Compile Include="examples\CalculatorSpecs.cs" />
     <Compile Include="infrastructure\BasicDependencyFactorySpecs.cs" />
     <Compile Include="infrastructure\ContainerSpecs.cs" />
+    <Compile Include="infrastructure\DefaultDependencyFactoryRegistrySpecs.cs" />
     <Compile Include="infrastructure\DependencyContainerSpecs.cs" />
     <Compile Include="infrastructure\LogSpecs.cs" />
     <Compile Include="infrastructure\MapperRegistrySpecs.cs" />
