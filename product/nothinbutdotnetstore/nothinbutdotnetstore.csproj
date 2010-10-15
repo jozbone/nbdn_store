@@ -51,6 +51,8 @@
     <Compile Include="infrastructure\containers\DependencyContainer .cs" />
     <Compile Include="infrastructure\containers\DependencyFactory.cs" />
     <Compile Include="infrastructure\containers\DependencyFactoryRegistry.cs" />
+    <Compile Include="infrastructure\logging\basic\TextWriterLogger.cs" />
+    <Compile Include="infrastructure\logging\basic\TextWriterLoggerFactory.cs" />
     <Compile Include="infrastructure\logging\Log.cs" />
     <Compile Include="infrastructure\logging\Logger.cs" />
     <Compile Include="infrastructure\logging\LoggerFactory.cs" />
@@ -86,6 +88,9 @@
     <Compile Include="web\infrastructure\frontcontroller\stubs\StubViewPathRegistry.cs" />
     <Compile Include="web\infrastructure\frontcontroller\View.cs" />
     <Compile Include="web\infrastructure\frontcontroller\ViewPathRegistry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="infrastructure\logging\log4net\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

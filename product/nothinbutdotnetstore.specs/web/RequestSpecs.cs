@@ -19,7 +19,7 @@ namespace nothinbutdotnetstore.specs.web
             {
                 the_mapped_model = new OurInputModel();
                 payload = the_dependency<Payload>();
-                payloadMapper = an<OurInputPayloadMapper>();
+                payload_mapper = an<OurInputPayloadMapper>();
 
             };
 
@@ -27,7 +27,7 @@ namespace nothinbutdotnetstore.specs.web
                 result = sut.map<OurInputModel>();
 
             It should_use_the_payload_mapper_to_map_the_payload_to_the_model = () =>
-                payloadMapper.received(x => x.map_our_input_model_request_payload_to_our_input_model(payload, the_mapped_model));
+                payload_mapper.received(x => x.map_our_input_model_request_payload_to_our_input_model(payload, the_mapped_model));
 
             It should_return_the_model_mapped_from_the_request_payload = () =>
                 result.ShouldEqual(the_mapped_model);
@@ -36,7 +36,7 @@ namespace nothinbutdotnetstore.specs.web
             static OurInputModel result;
             static OurInputModel the_mapped_model;
             static Payload payload;
-            static OurInputPayloadMapper payloadMapper;
+            static OurInputPayloadMapper payload_mapper;
         }
 
         class OurInputPayloadMapper
